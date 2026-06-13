@@ -4,20 +4,20 @@ Course: IT-466T Machine Learning (Fall 2025)
 CLO: CLO 3 – Analyze different algorithms to improve the performance of machine learning models
 Dataset: Smart Healthcare and Lifestyle Prediction (smart_healthcare_dataset.csv)
 
-Problem Statement
+# Problem Statement
 
 A regional healthcare diagnostics provider needs an analytical profiling module to optimize its predictive pipeline. This project evaluates architectural trade-offs (dimensionality reduction, model choice, hyperparameter tuning) across multiple ML paradigms to minimize classification error before deployment.
 
 Target variable: heart_disease (binary: 0 = no disease, 1 = disease)
 Goal: Not just maximize accuracy, but analyze how and why each technique (PCA, cross-validation, hyperparameter tuning) affects accuracy, stability (variance), training time, and memory.
 
-Contents
+# Contents
 
 
 ML_CCP_Solution.ipynb – complete, self-contained Jupyter notebook with all code, plots, and analysis.
 
 
-Workflow Covered
+# Workflow Covered
 
 
 EDA – inspecting the dataset, checking missing values, dropping the constant health_risk_score column, correlation heatmap.
@@ -50,20 +50,18 @@ Assertion that hyperparameter search converges to a result at least as good as t
 Results Matrix & Engineering Analysis – consolidated table of baseline / CV / tuned accuracies, plus a written bias-variance discussion of every result.
 
 
-Key Results (example run)
+# Key Results (example run)
 
-ModelBaseline AccCV Mean ± StdTuned Test AccKNN~0.94varies0.944Naive Bayes~0.94varies0.944SVM~0.96varies0.971Decision Tree~0.93varies0.949Random Forest~0.96varies0.962
+ModelBaseline AccCV Mean ± StdTuned  
 
-PCA: 12 of 14 components retain ~97% variance, with accuracy plateauing beyond ~10–12 components while training time keeps increasing — illustrating the dimensionality vs. cost trade-off.
+# Test Acc KNN : 0.94 varies 0.944
+# Naive Bayes: 0.94 varies: 0.944
+# SVM: 0.96 varies: 0.971
+# Decision Tree: 0.93 varies : 0.949
+# Random Forest: 0.96 varies: 0.962
 
-How to Run
+PCA: 12 of 14 components retain 97% variance, with accuracy plateauing beyond 10–12 components while training time keeps increasing, illustrating the dimensionality vs. cost trade-off.
 
-
-Open the notebook on Kaggle with the smart_healthcare_dataset.csv dataset attached.
-Verify the data path in the first code cell matches your Kaggle input path (/kaggle/input/.../smart_healthcare_dataset.csv).
-Run all cells top to bottom (Run All / Save & Run All).
-
-
-Tools & Libraries
+# Tools & Libraries
 
 pandas, numpy, matplotlib, seaborn, scikit-learn (PCA, KNN, GaussianNB, SVC, DecisionTreeClassifier, RandomForestClassifier, KFold, GridSearchCV, RandomizedSearchCV)
